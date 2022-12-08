@@ -12,6 +12,9 @@ public class EmployeeWage {
         int partTimeHour = 1;
         int dailyWage;
         int dailyEmpWage=0;
+        int workingDays = 20;
+        int empWage;
+        int totalEmpWage =0;
 
         int empCheck = (int)Math.floor(Math.random()*10)%2;
         System.out.println(empCheck);
@@ -54,5 +57,24 @@ public class EmployeeWage {
         }
         dailyEmpWage =(wagePerHour*empHrs);
         System.out.println("Emp Wages are " +dailyEmpWage);
+
+        for(int Day = 0; Day<workingDays; Day++){
+
+            switch(empCheck){
+                case 0:
+                    empHrs=8;
+                    break;
+                case 1:
+                    empHrs=4;
+                    break;
+                default:
+                    empHrs=0;
+            }
+            empWage=(empHrs*wagePerHour);
+            totalEmpWage +=empWage;
+            System.out.println("empWage = " +empWage);
+
+        }
+        System.out.println("TotalEmpWage = " +totalEmpWage);
     }
 }
