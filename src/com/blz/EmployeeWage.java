@@ -8,6 +8,9 @@ public class EmployeeWage {
         int isFullTime = 1;
         int empHrs ;
         int empWages ;
+        int fullDayHour = 0;
+        int partTimeHour = 1;
+        int dailyWage;
 
         int empCheck = (int)Math.floor(Math.random()*10)%2;
         System.out.println(empCheck);
@@ -26,5 +29,17 @@ public class EmployeeWage {
         }
         empWages = (wagePerHour * empHrs);
         System.out.println("The employee Wages are : " +empWages);
+
+        if (empCheck == fullDayHour){
+            empHrs=8;
+        }
+        else if (empCheck == partTimeHour) {
+            empHrs = 4;
+        }
+        else {
+            empHrs=0;
+        }
+        dailyWage = (wagePerHour * empHrs);
+        System.out.println("The employee Wages are : " +dailyWage);
     }
 }
